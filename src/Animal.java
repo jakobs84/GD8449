@@ -8,8 +8,9 @@ public class Animal {
     private Double weight;   //tu zrobic private
     Boolean alive;
 
-    Animal(String species) {
+    Animal(String species, String name) {
         this.species = species;
+        this.name = name;
         this.alive = true;
         if (this.species == "canis") {
             this.weight = 10.0;
@@ -18,15 +19,15 @@ public class Animal {
         } else {
             this.weight = 1.0;
         }
-        System.out.print("Gatunek :" + species);
-        System.out.println(", waga :" + weight);
+
+        System.out.println(IntroduceYourSelf());
     }
 
     void feed() {
         ItAllive();
         if (alive) {
             weight += 1;
-            System.out.println("Karma nowa waga:" + weight);
+            System.out.println("Food, new weight:" + weight);
         }
     }
 
@@ -35,7 +36,7 @@ public class Animal {
         ItAllive();
         if (alive) {
             weight -= 1;
-            System.out.println("Spacer nowa waga:" + weight);
+            System.out.println("Walk, new weight:" + weight);
         }
     }
 
@@ -44,8 +45,14 @@ public class Animal {
     void ItAllive() {
         if (weight <= 1) {
             alive = false;
-            System.out.println("Zwierzak zdechł");
+            System.out.println("The animal died");
         }
+
+    }
+
+
+    String IntroduceYourSelf() {
+        return "Im " + species + ", my name is " + name + " and my weight is " + weight + ".";
 
     }
 }

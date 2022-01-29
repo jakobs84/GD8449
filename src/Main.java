@@ -3,8 +3,8 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Animal dog = new Animal("canis");
-        dog.name = "Szarik";
+        Animal dog = new Animal("canis", "Szarik");
+        //dog.name = "Szarik";
         dog.species = "pies";
         dog.age = 8;
 
