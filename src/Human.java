@@ -6,5 +6,5 @@ public class Human {
     Integer age;
     Double weight;
     Animal pet;
-
+    Car vehicle;
 }
