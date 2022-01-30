@@ -1,4 +1,4 @@
-package com.company;
+package com.devices;
 
 public class Phone {
 }

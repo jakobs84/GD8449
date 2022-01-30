@@ -1,4 +1,4 @@
-package com.company;
+package com.devices;
 
 public class Main {
     public Main() { /* compiled code */ }
@@ -48,6 +48,10 @@ public class Main {
         kacper.getSalery();
         kacper.setVehicle(bryka);
 
+        System.out.println(new Car("Homer", "T1", 120.1).equals(new Car("Homer", "T1", 120.1)));
+        System.out.println(new Car("Homer", "T1", 120.1).equals(new Car("Homer2", "T2", 120.1)));
+
+        System.out.println(kacper);
 
     }
 }

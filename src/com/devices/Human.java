@@ -1,4 +1,4 @@
-package com.company;
+package com.devices;
 
 import java.util.Date;
 
@@ -48,6 +48,20 @@ public class Human {
         } else
             System.out.println("no gold no car, look for a better job");
     }
+
+    @Override
+    public String toString() {
+        return "Human{" +
+                "firstName='" + firstName + '\'' +
+                ", lastNam='" + lastNam + '\'' +
+                ", age=" + age +
+                ", weight=" + weight +
+                ", pet=" + pet +
+                ", vehicle=" + vehicle +
+                ", salery=" + salery +
+                '}';
+    }
+
 }
 
 

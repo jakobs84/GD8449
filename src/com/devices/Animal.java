@@ -1,4 +1,4 @@
-package com.company;
+package com.devices;
 
 public class Animal {
 
@@ -54,5 +54,16 @@ public class Animal {
     String IntroduceYourSelf() {
         return "Im " + species + ", my name is " + name + " and my weight is " + weight + ".";
 
+    }
+
+    @Override
+    public String toString() {
+        return "Animal{" +
+                "species='" + species + '\'' +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", weight=" + weight +
+                ", alive=" + alive +
+                '}';
     }
 }
