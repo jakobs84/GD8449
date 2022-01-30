@@ -53,5 +53,17 @@ public class Main {
 
         System.out.println(kacper);
 
-    }
+   //   Task 7
+        bryka.turnOn();
+
+        Phone nokia = new Phone("Nokia", "8210", 1999);
+
+        nokia.turnOn();
+        System.out.println(nokia);
+
+        };
+
+
+
+
 }

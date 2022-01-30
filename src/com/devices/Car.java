@@ -1,9 +1,9 @@
 package com.devices;
 
-public class Car  {
+public class Car extends Devices {
 
-    final String model;
-    final String producer;
+  //      final String model;
+  //  final String producer;
     String color;
     Double millage;
     Integer age;
@@ -40,5 +40,10 @@ public class Car  {
                 ", value=" + value +
                 ", manualGar=" + manualGar +
                 '}';
+    }
+
+    @Override
+    public void turnOn() {
+        System.out.println("I turn on the key");
     }
 }
