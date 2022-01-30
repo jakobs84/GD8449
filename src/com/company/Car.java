@@ -1,3 +1,5 @@
+package com.company;
+
 public class Car {
 
     final String model;
@@ -8,10 +10,11 @@ public class Car {
     Double value;
     Boolean manualGar;
 
-    public Car(String producer, String model) {
+    public Car(String producer, String model, Double value) {
         this.producer = producer;
         this.model = model;
         this.millage = 0.0;
+        this.value = value;
     }
 
 }

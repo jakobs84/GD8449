@@ -1,3 +1,5 @@
+package com.company;
+
 public class Main {
     public Main() { /* compiled code */ }
 
@@ -8,7 +10,7 @@ public class Main {
 
         dog.species = "pies";
         dog.age = 8;
-  /*
+  /*    Task 2
         dog.feed();
         dog.takeForAWalk();
         dog.takeForAWalk();
@@ -33,8 +35,18 @@ public class Main {
         kacper.age = 21;
         kacper.pet = dog;
 
-        Car bryka = new Car("Honda", "Crv");
-        kacper.vehicle = bryka;
+        Car bryka = new Car("Honda", "Crv", 10.5 );
+/*
+  //      Task 3 i 4
+  //      kacper.setSalery(-12.1);
+  //      kacper.setSalery(33.3);
+  //      kacper.getSalery();
+
+ */
+  //    Task 5
+        kacper.setSalery(65.3);
+        kacper.getSalery();
+        kacper.setVehicle(bryka);
 
 
     }
