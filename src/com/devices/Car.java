@@ -1,6 +1,6 @@
 package com.devices;
 
-public class Car extends Devices {
+public abstract class Car extends Devices {
 
   //      final String model;
   //  final String producer;
@@ -15,7 +15,7 @@ public class Car extends Devices {
         this.model = model;
         this.millage = 0.0;
         this.value = value;
-    }
+      }
 
     public  boolean equals (Car car){
         if (this == car){
@@ -46,4 +46,7 @@ public class Car extends Devices {
     public void turnOn() {
         System.out.println("I turn on the key");
     }
+
+    abstract void refuel();
+
 }

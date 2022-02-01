@@ -1,5 +1,8 @@
 package com.devices;
 
+import java.util.LinkedList;
+import java.util.List;
+
 public class Main {
     public Main() { /* compiled code */ }
 
@@ -35,7 +38,10 @@ public class Main {
         kacper.age = 21;
         kacper.pet = dog;
 
-        Car bryka = new Car("Honda", "Crv", 10.5 );
+        Car bryka = new Car("Honda", "Crv", 10.5) {
+            @Override
+            void refuel() {}
+        };
 /*
   //      Task 3 i 4
   //      kacper.setSalery(-12.1);
@@ -48,8 +54,20 @@ public class Main {
         kacper.getSalery();
         kacper.setVehicle(bryka);
 
-        System.out.println(new Car("Homer", "T1", 120.1).equals(new Car("Homer", "T1", 120.1)));
-        System.out.println(new Car("Homer", "T1", 120.1).equals(new Car("Homer2", "T2", 120.1)));
+        System.out.println(new Car("Homer", "T1", 120.1) {
+            @Override
+            void refuel() {}
+        }.equals(new Car("Homer", "T1", 120.1) {
+            @Override
+            void refuel() {}
+        }));
+        System.out.println(new Car("Homer", "T1", 120.1) {
+            @Override
+            void refuel() {}
+        }.equals(new Car("Homer2", "T2", 120.1) {
+            @Override
+            void refuel() {}
+        }));
 
         System.out.println(kacper);
 
@@ -61,8 +79,19 @@ public class Main {
         nokia.turnOn();
         System.out.println(nokia);
 
-        };
 
+
+    // Task 10
+        List<String> appNames = new LinkedList<>();
+        appNames.add("Facebook");
+        appNames.add("Youtube");
+        appNames.add("Prosiak");
+
+        //nokia.installAnApp(appNames);
+        nokia.installAnApp("Andrew","2.0");
+        //nokia.installAnApp("Andrew","2.0","wsb.gda.pl");
+
+        };
 
 
 

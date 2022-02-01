@@ -11,6 +11,7 @@ public class Human {
     Animal pet;
     private Car vehicle;
     private Double salery;
+    public Double casch;
 
 
     public Double getSalery() {
