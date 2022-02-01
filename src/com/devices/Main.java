@@ -1,5 +1,8 @@
 package com.devices;
 
+import creatures.Animal;
+import creatures.Pet;
+
 import java.util.LinkedList;
 import java.util.List;
 
@@ -9,31 +12,32 @@ public class Main {
     public static void main(String[] args) {
 
   // Task 1
-        Animal dog = new Animal("canis", "Szarik");
-        dog.species = "pies";
-        dog.age = 8;
+       Pet dog = new Pet("canis", "Szarik");
+       Pet cat = new Pet("whisky", "Lew");
+        //dog.species = "pies";
+        //dog.age = 8;
 
 
   //    Task 2
-/*
+
         dog.feed();
+      //  dog.takeForAWalk();
         dog.takeForAWalk();
         dog.takeForAWalk();
         dog.takeForAWalk();
         dog.takeForAWalk();
-        dog.takeForAWalk();
-        dog.takeForAWalk();
-        dog.takeForAWalk();
-        dog.takeForAWalk();
-        dog.feed();
-        dog.takeForAWalk();
-        dog.takeForAWalk();
-        dog.feed();
         dog.takeForAWalk();
         dog.takeForAWalk();
         dog.takeForAWalk();
         dog.feed();
-*/
+        dog.takeForAWalk();
+        dog.takeForAWalk();
+        dog.feed();
+        dog.takeForAWalk();
+        dog.takeForAWalk();
+        dog.takeForAWalk();
+        dog.feed();
+
         Human kacper = new Human();
         kacper.firstName = "Kacper";
         kacper.lastNam = "Brzęczyszczykiewiscz";
@@ -44,7 +48,7 @@ public class Main {
         zbuj.firstName = "Jakub";
         zbuj.lastNam = "Lenkodoly";
         zbuj.age = 33;
-  //    zbuj.pet = cat;
+        zbuj.pet = cat;
 
 
   //      Task 3 i 4
@@ -67,6 +71,7 @@ public class Main {
         System.out.println(new LPG("Homer", "T1", 120.1) .equals(new LPG("Homer2", "T2", 120.1)));
 
         System.out.println(kacper);
+        System.out.println(zbuj);
 
    //   Task 7
         bryka.turnOn();

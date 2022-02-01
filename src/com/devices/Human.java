@@ -1,5 +1,7 @@
 package com.devices;
 
+import creatures.Animal;
+
 import java.util.Date;
 
 
