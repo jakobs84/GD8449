@@ -6,7 +6,7 @@ public class LPG extends Car{
     }
 
     @Override
-    void refuel() {
-
+    public void Refuel() {
+        System.out.println("Gass Full");
     }
 }

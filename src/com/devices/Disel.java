@@ -6,7 +6,7 @@ public class Disel extends Car{
     }
 
     @Override
-    void refuel() {
+    public void Refuel() {
 
     }
 }

@@ -10,10 +10,12 @@ public class Main {
 
   // Task 1
         Animal dog = new Animal("canis", "Szarik");
-
         dog.species = "pies";
         dog.age = 8;
-  /*    Task 2
+
+
+  //    Task 2
+/*
         dog.feed();
         dog.takeForAWalk();
         dog.takeForAWalk();
@@ -38,10 +40,12 @@ public class Main {
         kacper.age = 21;
         kacper.pet = dog;
 
-        Car bryka = new Car("Honda", "Crv", 10.5) {
-            @Override
-            void refuel() {}
-        };
+        Human zbuj = new Human();
+        zbuj.firstName = "Jakub";
+        zbuj.lastNam = "Lenkodoly";
+        zbuj.age = 33;
+//        zbuj.pet = cat;
+
 /*
   //      Task 3 i 4
   //      kacper.setSalery(-12.1);
@@ -50,24 +54,16 @@ public class Main {
 
  */
   //    Task 5
+
+        Disel bryka = new Disel("Honda", "Crv", 120.1) ;
+
         kacper.setSalery(65.3);
         kacper.getSalery();
-        kacper.setVehicle(bryka);
+       // kacper.setVehicle(bryka);
 
-        System.out.println(new Car("Homer", "T1", 120.1) {
-            @Override
-            void refuel() {}
-        }.equals(new Car("Homer", "T1", 120.1) {
-            @Override
-            void refuel() {}
-        }));
-        System.out.println(new Car("Homer", "T1", 120.1) {
-            @Override
-            void refuel() {}
-        }.equals(new Car("Homer2", "T2", 120.1) {
-            @Override
-            void refuel() {}
-        }));
+
+        System.out.println(new Disel("Homer", "T1", 120.1) .equals(new Disel("Homer", "T1", 120.1)));
+        System.out.println(new LPG("Homer", "T1", 120.1) .equals(new LPG("Homer2", "T2", 120.1)));
 
         System.out.println(kacper);
 
@@ -79,6 +75,18 @@ public class Main {
         nokia.turnOn();
         System.out.println(nokia);
 
+    // Task 8
+
+        Disel task8 = new Disel("Honda", "HRV", 150.1) ;
+
+        zbuj.setSalery(220.1);
+
+    //    kacper.setVehicle(task8);
+        zbuj.casch = 150.1;
+        //kacper.casch = 0.1;
+
+
+        task8.sell(zbuj,kacper,140.1);
 
 
     // Task 10

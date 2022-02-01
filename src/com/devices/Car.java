@@ -1,9 +1,7 @@
 package com.devices;
 
-public abstract class Car extends Devices {
+public abstract class Car extends Devices implements SaleAble {
 
-  //      final String model;
-  //  final String producer;
     String color;
     Double millage;
     Integer age;
@@ -47,6 +45,21 @@ public abstract class Car extends Devices {
         System.out.println("I turn on the key");
     }
 
-    abstract void refuel();
+    @Override
+    public void sell(Human buyer, Human saller, Double price) {
+        if (buyer.casch < price)
+        {
+            System.out.println("Sory kupujący ma za mało kasy na kupno ");
+        } else if (saller.hasCar()== null) {
+            System.out.println("Sory sprzedającty nie ma samochodu ");
+        } else {
+            saller.casch +=price;
+            buyer.casch -=price;
+            saller.car = null;
+            buyer.car = this;
+            System.out.println("Gratulacje kupił pan cegłe");
+        }
+    }
 
+    abstract public void Refuel();
 }
