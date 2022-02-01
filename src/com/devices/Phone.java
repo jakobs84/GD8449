@@ -6,16 +6,11 @@ import java.util.List;
 
 //import static com.sun.imageio.plugins.jpeg.JPEG.version;
 
-public class Phone extends Devices {
-    //private static final String DEFAULT_NAME = "appka_zdrapka";
+public class Phone extends Devices implements SaleAble {
+
     private static final String DEFAULT_VERSION_NAME = "apka_zdrapka";
     private static final int DAFAULT_PORT_NAME = 433;
     private static final String DEFAULT_SERVER_NAME = "apka.wsb.pl";
-/*
-    String producer;
-    String model;
-    Integer yearOfProduction;
- */
 
     public Phone(String producer, String model, Integer yearOfProduction) {
         this.producer = producer;
@@ -67,4 +62,21 @@ public void installAnApp(URL url){
     System.out.println("Czyszczenie");
 }
 
+
+    @Override
+    public void sell(Human buyer, Human saller, Double price) {
+        if (buyer.casch < price)
+        {
+            System.out.println("Sory the buyer doesn't have enough money to buy Phone " +saller.phone.producer +" "+ saller.phone.model);
+        } else if (saller.hasCar()== null) {
+            System.out.println("Sorry the seller doesn't have a Phone ");
+        } else {
+            saller.casch +=price;
+            buyer.casch -=price;
+            saller.phone = null;
+            buyer.phone = this;
+            System.out.println("Congratulations you bought a brick - " +buyer.phone.producer +" "+ buyer.phone.model );
+
+        }
+    }
 }

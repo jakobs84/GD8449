@@ -44,22 +44,23 @@ public class Main {
         zbuj.firstName = "Jakub";
         zbuj.lastNam = "Lenkodoly";
         zbuj.age = 33;
-//        zbuj.pet = cat;
+  //    zbuj.pet = cat;
 
-/*
+
   //      Task 3 i 4
-  //      kacper.setSalery(-12.1);
-  //      kacper.setSalery(33.3);
-  //      kacper.getSalery();
+/*
+        kacper.setSalery(-12.1);
+        kacper.setSalery(33.3);
+        kacper.getSalery();
+*/
 
- */
   //    Task 5
 
         Disel bryka = new Disel("Honda", "Crv", 120.1) ;
 
         kacper.setSalery(65.3);
         kacper.getSalery();
-       // kacper.setVehicle(bryka);
+  //      kacper.setVehicle(bryka);
 
 
         System.out.println(new Disel("Homer", "T1", 120.1) .equals(new Disel("Homer", "T1", 120.1)));
@@ -69,25 +70,29 @@ public class Main {
 
    //   Task 7
         bryka.turnOn();
-
         Phone nokia = new Phone("Nokia", "8210", 1999);
-
         nokia.turnOn();
         System.out.println(nokia);
 
     // Task 8
 
-        Disel task8 = new Disel("Honda", "HRV", 150.1) ;
+        Disel zlomek = new Disel("Honda", "HRV", 150.1) ;
 
         zbuj.setSalery(220.1);
 
-    //    kacper.setVehicle(task8);
-        zbuj.casch = 150.1;
+        kacper.phone = nokia;
+        kacper.setVehicle(zlomek);
+        zbuj.casch = 180.1;
         //kacper.casch = 0.1;
 
+        System.out.println();
 
-        task8.sell(zbuj,kacper,140.1);
 
+        zlomek.sell(zbuj,kacper,140.1);
+        nokia.sell(zbuj,kacper,20.1);
+        kacper.sell(zbuj,kacper,33.1);
+
+        System.out.println();
 
     // Task 10
         List<String> appNames = new LinkedList<>();

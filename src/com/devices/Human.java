@@ -3,7 +3,9 @@ package com.devices;
 import java.util.Date;
 
 
-public class Human {
+public class Human implements SaleAble{
+    public Car car;
+    Phone phone;
     String firstName;
     String lastNam;
     Integer age;
@@ -12,6 +14,11 @@ public class Human {
     private Car vehicle;
     private Double salery;
     public Double casch;
+
+    public Human(){
+        this.salery = 0.0;
+        this.casch = 0.0;
+    }
 
 
     public Double getSalery() {
@@ -63,6 +70,13 @@ public class Human {
                 '}';
     }
 
+
+    public Car hasCar() {        return this.vehicle;    }
+
+    @Override
+    public void sell(Human buyer, Human saller, Double price) {
+        System.out.println("This is not the Middle Ages human trafficking is prohibited");
+    }
 }
 
 
