@@ -60,15 +60,15 @@ public class Main {
 
   //    Task 5
 
-        Disel bryka = new Disel("Honda", "Crv", 120.1) ;
+        Disel bryka = new Disel("Honda", "Crv", 2022,120.1) ;
 
         kacper.setSalery(65.3);
         kacper.getSalery();
   //      kacper.setVehicle(bryka);
 
 
-        System.out.println(new Disel("Homer", "T1", 120.1) .equals(new Disel("Homer", "T1", 120.1)));
-        System.out.println(new LPG("Homer", "T1", 120.1) .equals(new LPG("Homer2", "T2", 120.1)));
+        System.out.println(new Disel("Homer", "T1", 1984,120.1) .equals(new Disel("Homer", "T1", 1984,120.1)));
+        System.out.println(new LPG("Homer", "T1", 1984,120.1) .equals(new LPG("Homer2", "T2", 1882, 120.1)));
 
         System.out.println(kacper);
         System.out.println(zbuj);
@@ -81,21 +81,27 @@ public class Main {
 
     // Task 8
 
-        Disel zlomek = new Disel("Honda", "HRV", 150.1) ;
+        Disel zlomek = new Disel("Honda", "HRV", 2022,150.1) ;
+        Disel zlomek2 = new Disel("Hondaa", "HRVa", 1994, 150.1) ;
 
         zbuj.setSalery(220.1);
 
         kacper.phone = nokia;
-        kacper.setVehicle(zlomek);
+        kacper.addCar(zlomek);
+        kacper.addCar(zlomek2);
+        //kacper.setVehicle();
         zbuj.casch = 180.1;
         //kacper.casch = 0.1;
 
         System.out.println();
 
 
+
         zlomek.sell(zbuj,kacper,140.1);
+        zlomek2.sell(zbuj,kacper,5.0);
         nokia.sell(zbuj,kacper,20.1);
         kacper.sell(zbuj,kacper,33.1);
+
 
         System.out.println();
 
@@ -109,7 +115,23 @@ public class Main {
         nokia.installAnApp("Andrew","2.0");
         //nokia.installAnApp("Andrew","2.0","wsb.gda.pl");
 
+    // Task 11
+
+    System.out.println("Wartosc stajni : " + zbuj.getValuee());
+
+     System.out.println("Garage list:");
+     kacper.carInGarageList();
+     zbuj.carInGarageList();
+     System.out.println("Sort Garage list by year of produc:");
+     kacper.carInGarageListSort();
+     zbuj.carInGarageListSort();
+
+
+
         };
+
+
+
 
 
 

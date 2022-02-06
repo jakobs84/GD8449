@@ -6,12 +6,14 @@ public abstract class Car extends Devices implements SaleAble {
     Double millage;
     Integer age;
     Double value;
+    Integer yearOfProduction;
     Boolean manualGar;
 
-    public Car(String producer, String model, Double value) {
+    public Car(String producer, String model, Integer yearOfProduction, Double value) {
         this.producer = producer;
         this.model = model;
         this.millage = 0.0;
+        this.yearOfProduction = yearOfProduction;
         this.value = value;
       }
 
@@ -34,9 +36,8 @@ public abstract class Car extends Devices implements SaleAble {
                 ", producer='" + producer + '\'' +
                 ", color='" + color + '\'' +
                 ", millage=" + millage +
-                ", age=" + age +
                 ", value=" + value +
-                ", manualGar=" + manualGar +
+                ", yearOfProduction=" + yearOfProduction +
                 '}';
     }
 
@@ -50,17 +51,17 @@ public abstract class Car extends Devices implements SaleAble {
         if (buyer.casch < price)
         {
             System.out.println("Sory the buyer doesn't have enough money to buy car " +saller.car.producer +" "+ saller.car.model);
-        } else if (saller.hasCar()== null) {
+        } else if (!saller.hasCar()) {
             System.out.println("Sorry the seller doesn't have a car ");
         } else {
             saller.casch +=price;
             buyer.casch -=price;
-            saller.car = null;
-            buyer.car = this;
-            System.out.println("Congratulations you bought a brick - " +buyer.car.producer +" "+ buyer.car.model );
+            saller.removwCar(this);
+            buyer.addCar(this);
 
         }
     }
+
 
     abstract public void Refuel();
 }

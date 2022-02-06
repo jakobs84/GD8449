@@ -4,13 +4,9 @@ public abstract class Devices {
     String producer;
     String model;
     Integer yearOfProduction;
+    Double Valuee;
 
- /*   public Devices(String producer, String model, Integer yearOfProduction) {
-        this.producer = producer;
-        this.model = model;
-        this.yearOfProduction = yearOfProduction;
-    }
-*/
+
 
     public abstract void turnOn();
 
@@ -22,4 +18,6 @@ public abstract class Devices {
                 ", yearOfProduction=" + yearOfProduction +
                 '}';
     }
+
+
 }

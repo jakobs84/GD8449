@@ -63,12 +63,13 @@ public void installAnApp(URL url){
 }
 
 
+
     @Override
     public void sell(Human buyer, Human saller, Double price) {
         if (buyer.casch < price)
         {
             System.out.println("Sory the buyer doesn't have enough money to buy Phone " +saller.phone.producer +" "+ saller.phone.model);
-        } else if (saller.hasCar()== null) {
+        } else if (saller.phone != this) {
             System.out.println("Sorry the seller doesn't have a Phone ");
         } else {
             saller.casch +=price;
