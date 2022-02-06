@@ -9,7 +9,7 @@ import java.util.Objects;
 
 
 public class Human implements SaleAble{
-    private static final int DEFAULT_GARAGE_SIZE = 2;
+    private static final int DEFAULT_GARAGE_SIZE = 4;
     public Car car;
     Phone phone;
     String firstName;
@@ -52,14 +52,17 @@ public class Human implements SaleAble{
         return this.garage[parkingLotNumber];
     }
 
-    public void setVehicle(Car vehicle, Integer parkingLotNumber) {
+    public void setVehicle(Car vehicle, Human carOwners) {
         //this.vehicle = vehicle;
+        Integer parkingLotNumber = carInGarageNumber();
         if(this.salery > vehicle.value) {
-            System.out.println("bought for gold");
+            System.out.println("Bought for gold- " + vehicle.model + " " + vehicle.producer + " "+ vehicle.yearOfProduction);
             this.garage[parkingLotNumber] = vehicle;
+            vehicle.carHistory(carOwners);
         }else if (this.salery > vehicle.value / 12){
-            System.out.println("bought with gold borrowed from the bank ");
+            System.out.println("Bought with gold borrowed from the bank - " + vehicle.model + " " + vehicle.producer + " "+ vehicle.yearOfProduction);
             this.garage[parkingLotNumber] = vehicle;
+            vehicle.carHistory(carOwners);
         } else
             System.out.println("no gold no car, look for a better job");
     }
@@ -101,10 +104,10 @@ public class Human implements SaleAble{
             if (Objects.equals(this.garage[i], car)) {
                 this.garage[i] = null;
                 i = this.garage.length;
-                System.out.println("Sprzedano " + car.model + " " + car.producer);
+                System.out.println("Sell " + car.model + " " + car.producer + " " +car.yearOfProduction);
             } else {
                 if (i == this.garage.length - 1) {
-                    System.out.println("Brak auta" + car.model + " " + car.producer);
+                    System.out.println("Car missing " + car.model + " " + car.producer + " " +car.yearOfProduction);
                 }
             }
         }
@@ -116,11 +119,12 @@ public class Human implements SaleAble{
 
             if (this.garage[i] == null) {
                 this.garage[i] = car;
-                System.out.println("Dodano " + car.model + " " + car.producer);
+
+                System.out.println("Add " + car.model + " " + car.producer + " " + car.yearOfProduction + " to garage");
                 i = this.garage.length;
             } else {
                 if (i == this.garage.length - 1) {
-                    System.out.println("Garaż jest za mały !!!!");
+                    System.out.println("Garage to Small  !!!!");
                 }
             }
         }
@@ -176,25 +180,22 @@ public class Human implements SaleAble{
 
     class sortByYear implements Comparator<Car> {
         public int compare(Car x, Car y){
+            if (x != null &&  y != null)
             return x.yearOfProduction - y.yearOfProduction;
+            else return  0;
         }
     }
+
     public void carInGarageListSort(){
-        if (carInGarageNumber() > 0){
-        Arrays.sort(this.garage, new sortByYear());
+        if (garage.length != 0) {
+            Arrays.sort(this.garage, new sortByYear());
+            for (int i = 0; (i < garage.length) && (garage[i] != null); i++) {
 
-        if (garage.length != 0)
-        for(int i = 0; i < garage.length; i++){
-
-            System.out.println(garage[i]);
-
-        }}
+                System.out.println(garage[i]);
+            }
+        }
         //else {System.out.println("Empty garage ");}
     }
-
-
-
-
 
 }
 

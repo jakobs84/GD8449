@@ -1,5 +1,8 @@
 package com.devices;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public abstract class Car extends Devices implements SaleAble {
 
     String color;
@@ -8,6 +11,7 @@ public abstract class Car extends Devices implements SaleAble {
     Double value;
     Integer yearOfProduction;
     Boolean manualGar;
+    public List<Human> carOwners;
 
     public Car(String producer, String model, Integer yearOfProduction, Double value) {
         this.producer = producer;
@@ -15,6 +19,7 @@ public abstract class Car extends Devices implements SaleAble {
         this.millage = 0.0;
         this.yearOfProduction = yearOfProduction;
         this.value = value;
+        this.carOwners = new ArrayList<Human>();
       }
 
     public  boolean equals (Car car){
@@ -58,10 +63,22 @@ public abstract class Car extends Devices implements SaleAble {
             buyer.casch -=price;
             saller.removwCar(this);
             buyer.addCar(this);
-
+            carHistory(buyer);
         }
     }
 
 
+    public void carHistory(Human h){
+        this.carOwners.add(h);
+        System.out.println("The vehicle card has been updated .");
+    }
+
+    public int carOwnersCount(){
+        return this.carOwners.size();
+    }
+
+
     abstract public void Refuel();
+
+
 }

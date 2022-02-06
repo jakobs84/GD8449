@@ -60,11 +60,11 @@ public class Main {
 
   //    Task 5
 
-        Disel bryka = new Disel("Honda", "Crv", 2022,120.1) ;
+        Disel bryka = new Disel("Honda", "Crv", 2021,120.1) ;
 
         kacper.setSalery(65.3);
         kacper.getSalery();
-  //      kacper.setVehicle(bryka);
+       // kacper.setVehicle(bryka, kacper);
 
 
         System.out.println(new Disel("Homer", "T1", 1984,120.1) .equals(new Disel("Homer", "T1", 1984,120.1)));
@@ -82,14 +82,13 @@ public class Main {
     // Task 8
 
         Disel zlomek = new Disel("Honda", "HRV", 2022,150.1) ;
-        Disel zlomek2 = new Disel("Hondaa", "HRVa", 1994, 150.1) ;
+        Disel zlomek2 = new Disel("Honda", "CRX", 1984, 120.1) ;
 
         zbuj.setSalery(220.1);
 
         kacper.phone = nokia;
-        kacper.addCar(zlomek);
-        kacper.addCar(zlomek2);
-        //kacper.setVehicle();
+        kacper.setVehicle(zlomek, kacper);
+        kacper.setVehicle(zlomek2, kacper);
         zbuj.casch = 180.1;
         //kacper.casch = 0.1;
 
@@ -117,15 +116,14 @@ public class Main {
 
     // Task 11
 
-    System.out.println("Wartosc stajni : " + zbuj.getValuee());
+    System.out.println("The value of stables : " + zbuj.getValuee());
 
      System.out.println("Garage list:");
-     kacper.carInGarageList();
+     kacper.carInGarageList(); //Empty
      zbuj.carInGarageList();
-     System.out.println("Sort Garage list by year of produc:");
+     System.out.println("Sort Garage list by year of produc car:");
      kacper.carInGarageListSort();
      zbuj.carInGarageListSort();
-
 
 
         };
