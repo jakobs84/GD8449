@@ -1,5 +1,6 @@
 package com.devices;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -58,6 +59,8 @@ public abstract class Car extends Devices implements SaleAble {
             System.out.println("Sory the buyer doesn't have enough money to buy car " +saller.car.producer +" "+ saller.car.model);
         } else if (!saller.hasCar()) {
             System.out.println("Sorry the seller doesn't have a car ");
+        } else if(!this.carOwnerLast(saller)) {
+            System.out.println("Sorry the seller wasn't last in car history");
         } else {
             saller.casch +=price;
             buyer.casch -=price;
@@ -77,6 +80,36 @@ public abstract class Car extends Devices implements SaleAble {
         return this.carOwners.size();
     }
 
+    public boolean carOwnerWas(Human h){
+        if (carOwners.contains(h))
+        {
+            System.out.println(h.lastNam + " " +h.firstName + " was owner a car");
+            return true;
+        } else {
+            System.out.println(h.lastNam + " " +h.firstName + " wan't owner a car");
+            return false;
+        }
+    }
+
+    public boolean carOwnerLast(Human h){
+        if (this.carOwners.get(this.carOwners.size() - 1 ).equals(h))
+        {
+        //    System.out.println("Yes");
+            return true;
+        } else {
+        //    System.out.println("No");
+            return false;
+        }
+    }
+
+    public void carOwnerList(Human seller, Human buyer){
+        if (!carOwnerWas(seller)){}
+        else if ((this.carOwners.indexOf(buyer) -1 ) == this.carOwners.indexOf(seller)){
+            System.out.println(seller.lastNam + " " +seller.firstName + " sold car to " + buyer.lastNam + " " +buyer.firstName);
+        } else {
+            System.out.println(seller.lastNam + " " +seller.firstName + "  didn't sold car to " + buyer.lastNam + " " +buyer.firstName);
+        }
+    }
 
     abstract public void Refuel();
 

@@ -116,6 +116,10 @@ public class Main {
 
     // Task 11
 
+     Human Bolek = new Human();
+     Bolek.firstName = "Bolek";
+     Bolek.lastNam = "Lolek";
+
     System.out.println("The value of stables : " + zbuj.getValuee());
 
      System.out.println("Garage list:");
@@ -125,8 +129,27 @@ public class Main {
      kacper.carInGarageListSort();
      zbuj.carInGarageListSort();
 
+     System.out.println(zlomek.producer + " " +zlomek.model + " wsa sold :" + zlomek.carOwnersCount());
+     System.out.println(zlomek2.producer + " " +zlomek2.model + " wsa sold :" + zlomek2.carOwnersCount());
 
-        };
+     zlomek.carOwnerWas(kacper);
+     zlomek2.carOwnerWas(Bolek);
+
+
+     zlomek.carOwnerList(kacper,zbuj);
+     zlomek.carOwnerList(zbuj, kacper);
+     zlomek.carOwnerList(kacper,Bolek);
+
+     zlomek2.carOwnerLast(zbuj);
+     zlomek2.carOwnerLast(kacper);
+
+
+
+        }
+
+
+
+ ;
 
 
 
