@@ -2,11 +2,16 @@ package com.devices;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 //import static com.sun.imageio.plugins.jpeg.JPEG.version;
 
 public class Phone extends Devices implements SaleAble {
+
+    ArrayList<Application> appList = new ArrayList<>();
 
     private static final String DEFAULT_VERSION_NAME = "apka_zdrapka";
     private static final int DAFAULT_PORT_NAME = 433;
@@ -53,7 +58,7 @@ public class Phone extends Devices implements SaleAble {
         }
     }
 
-public void installAnApp(URL url){
+    public void installAnApp(URL url){
 
     System.out.println("Sprawdzam czy masz miejsce");
     System.out.println("Sprawdzam czy cię stać ");
@@ -62,9 +67,65 @@ public void installAnApp(URL url){
     System.out.println("Czyszczenie");
 }
 
+    public void installAplication(Human phonuser, Phone phone , Application app){
+        if (phonuser.casch > app.getAppPrice()){
+            phone.appList.add(app);
+            phonuser.casch -= app.getAppPrice();
+            System.out.println("Well done " + app.getAppName() + " wase install");
+        } else System.out.println(app.getAppName() + "Couldn't install");
+    }
+
+    public  boolean appWasInstaled (Application a){
+        boolean retVal = false;
+        for (int i =0; i < appList.size(); i++){
+            if (appList.get(i).getAppName().equals(a.appName)){
+                retVal = true;
+            }
+        }
+        return retVal;
+    }
+
+    public boolean appWasInstaled (String a){
+        boolean retVal = false;
+        for (int i =0; i < appList.size(); i++){
+            if (appList.get(i).getAppName().equals(a)){
+                retVal = true;
+            }
+        }
+        return retVal;
+    }
+
+    public void freeApp(Phone p) {
+        for (int i = 0; i < p.appList.size(); i++) {
+            if (p.appList.get(i).getAppPrice() == 0) {
+                System.out.println("Free Application name - " + p.appList.get(i).getAppName());
+            }
+        }
+    }
 
 
-    @Override
+        public double costAllApp (Phone p) {
+            double retVal = 0.0;
+            for (int i = 0; i < p.appList.size(); i++) {
+                retVal += p.appList.get(i).getAppPrice();
+            }
+            return retVal;
+        }
+
+
+        public void sortNameApp(Phone p){
+            ArrayList<String> appNameSort = new ArrayList<>();
+            for (int i = 0; i < p.appList.size(); i++) {
+                appNameSort.add(appList.get(i).getAppName());
+            }
+            Collections.sort(appNameSort);
+            System.out.println(appNameSort);
+        }
+        public void sortPriceApp(Phone p){
+
+        }
+
+        @Override
     public void sell(Human buyer, Human saller, Double price) {
         if (buyer.casch < price)
         {

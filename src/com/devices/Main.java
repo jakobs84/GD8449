@@ -143,6 +143,33 @@ public class Main {
      zlomek2.carOwnerLast(zbuj);
      zlomek2.carOwnerLast(kacper);
 
+     //Task 13
+
+     Application app1 = new Application("Super Mario", "1/0", 23.0);
+     Application app2 = new Application("Snake", "1.3", 12.3);
+     Application app3 = new Application("NordVpn", "6_1",58.0);
+     Application app4 = new Application("WFM", "3.456", 0.0);
+     Application app0 = new Application("Test", "0", 0.0);
+
+     nokia.sell(kacper, zbuj,1.0);
+
+     kacper.phone.installAplication(kacper, nokia, app1);
+     kacper.phone.installAplication(kacper, nokia, app2);
+     kacper.phone.installAplication(kacper, nokia, app3);
+     kacper.phone.installAplication(kacper, nokia, app4);
+
+    System.out.println("Check if " + app1.getAppName() + " are install - " + kacper.phone.appWasInstaled(app1));
+    System.out.println("Check if " + app0.getAppName() + " are install - " + kacper.phone.appWasInstaled(app0));
+    System.out.println("Check if " + app2.getAppName() + " are install - " + kacper.phone.appWasInstaled(app2.getAppName()));
+    System.out.println("Check if " + app0.getAppName() + " are install - " + kacper.phone.appWasInstaled(app0.getAppName()));
+
+    kacper.phone.freeApp(nokia);
+
+    kacper.phone.costAllApp(nokia);
+    System.out.println("Application sorty by name");
+    kacper.phone.sortNameApp(nokia);
+
+
 
 
         }
